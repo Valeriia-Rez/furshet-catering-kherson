@@ -19,6 +19,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "lint": "eslint src/*.jsx",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -59,7 +60,7 @@
   "lint-staged": {
     "./src/*.{js,jsx,ts,tsx}": [
       "npx prettier --write",
-      "eslint src/*.js --fix-dry-run"
+      "eslint src/*.jsx --fix-dry-run"
     ]
   }
 }
