@@ -1,6 +1,7 @@
 {
   "name": "furshet_catering_kherson",
   "version": "0.1.0",
+  "author": "Anna Vihrogonova & Valeria Rieznik",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
