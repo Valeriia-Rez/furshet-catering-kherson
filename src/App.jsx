@@ -1,27 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
+import HomePage from './pages/HomePage';
+import Layout from './components/Layout/Layout';
+import ContactAndDeliveryPage from './pages/ContactAndDeliveryPage';
+import ShoppingBagPage from './pages/ShoppingBagPage';
+import KulinarnyyTsekhPage from './pages/KulinarnyyTsekhPage';
+import KulinarnyyTsekhSections from './components/KulinarnyyTsekhSections';
+import ProductPage from './pages/ProductPage';
+import ServicesPage from './pages/ServicesPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          <code>src/App.js</code>
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Switch>
+        <Route path="/" exact component={HomePage} />
+        <Route
+          path="/contact-and-delivery"
+          component={ContactAndDeliveryPage}
+        />
+        <Route path="/shopping-bag" component={ShoppingBagPage} />
+        <Route path="/kulinarnyy-tsekh" exact component={KulinarnyyTsekhPage} />
+        <Route
+          path="/kulinarnyy-tsekh/:sectionName"
+          exact
+          component={KulinarnyyTsekhSections}
+        />
+        <Route
+          path="/kulinarnyy-tsekh/:sectionName/:productId"
+          component={ProductPage}
+        />
+        <Route path="/services" exact component={ServicesPage} />
+      </Switch>
+    </Layout>
   );
 }
 
